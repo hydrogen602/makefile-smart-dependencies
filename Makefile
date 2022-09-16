@@ -1,13 +1,14 @@
 CC := gcc
+EXE := main
+OBJS := main.o
 
-.PHONY: nop
-
-
-all: main.o
+all: $(OBJS)
+	$(CC) $^ -o $(EXE)
 
 .SECONDEXPANSION:
 %.o: %.c $$(shell ./dependency.py %.c)
-	@echo $@ $^
+	@echo "dependencies:" $^ 
+	$(CC) -c -o $@ $<
 
-nop:
-	@echo "hi"
+clean:
+	rm -f *.o $(EXE)
