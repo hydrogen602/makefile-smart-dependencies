@@ -1,6 +1,6 @@
 CC := gcc
 EXE := main
-OBJS := main.o
+OBJS := main.o other.o
 
 all: $(OBJS)
 	$(CC) $^ -o $(EXE)
