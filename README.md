@@ -7,7 +7,7 @@ When using general makefile rules, often all headers need to be added as a depen
 	$(CC) -c -o $@ $<
 ```
 
-However, GNU makefiles have a feature that allow passing variables like `$@` and `%.c` into a shell script which can then determine the dependencies. This is called secondary expansion and allows make to compute dependencies for each files automatically.
+However, GNU makefiles have a feature that allow passing variables like `$@` and `%.c` into a shell script which can then determine the dependencies. This is called second expansion and allows make to compute dependencies for each files automatically.
 
 ```Make
 .SECONDEXPANSION:
